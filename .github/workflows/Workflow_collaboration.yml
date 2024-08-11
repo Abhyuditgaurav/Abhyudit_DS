@@ -23,15 +23,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Git
         run: |
             git config --global user.name "Abhyuditgaurav"
             git config --global user.email "gauravim05@gmail.com"
 
-      - name: Merge main into collaboration
+      # - name: Merge main into collaboration
+      #   run: |
+      #     git checkout collaboration
+      #     git merge origin/main
+      #     git push origin collaboration
+      - name: checkout collaboration branch
         run: |
-          git checkout collaboration
-          git merge origin/main
-          git push origin collaboration
+          git fetch origin
+          git checkout -b collaboration origin/collaboration || git checkout collaboration
