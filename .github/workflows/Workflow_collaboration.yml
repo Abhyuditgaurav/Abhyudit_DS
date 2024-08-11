@@ -34,7 +34,9 @@ jobs:
         run: |
           git fetch origin
           git checkout -b collaboration origin/collaboration || git checkout collaboration
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Merge main into collaboration
         run: |
           git merge origin/main --allow-unrelated-histories
