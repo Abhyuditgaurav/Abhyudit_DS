@@ -30,12 +30,13 @@ jobs:
             git config --global user.name "Abhyuditgaurav"
             git config --global user.email "gauravim05@gmail.com"
 
-      # - name: Merge main into collaboration
-      #   run: |
-      #     git checkout collaboration
-      #     git merge origin/main
-      #     git push origin collaboration
       - name: checkout collaboration branch
         run: |
           git fetch origin
           git checkout -b collaboration origin/collaboration || git checkout collaboration
+
+      - name: Merge main into collaboration
+        run: |
+          git merge origin/main
+          git push origin collaboration
+          
