@@ -40,4 +40,4 @@ jobs:
           git merge origin/main --allow-unrelated-histories
           git push origin collaboration
         env:
-          GITHUB_TOKEN: ${{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}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
