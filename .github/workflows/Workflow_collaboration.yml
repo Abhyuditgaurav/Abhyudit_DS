@@ -23,7 +23,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Git
         run: |
@@ -39,4 +39,5 @@ jobs:
         run: |
           git merge origin/main --allow-unrelated-histories
           git push origin collaboration
-          
+        env:
+          GITHUB_TOKEN: ${{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}}
