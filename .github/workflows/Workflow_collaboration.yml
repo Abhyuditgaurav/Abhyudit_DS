@@ -33,5 +33,5 @@ jobs:
       - name: Merge main into collaboration
         run: |
           git checkout collaboration
-          git merge main
+          git merge origin/main
           git push origin collaboration
